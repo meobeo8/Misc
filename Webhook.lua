@@ -1,9 +1,7 @@
 --[[
-
 Made by griffin
 Discord: @griffindoescooking
 Github: https://github.com/idonthaveoneatm
-
 ]]--
 
 local webhookLibrary = {}
@@ -27,38 +25,48 @@ function webhookLibrary.createMessage(properties)
             ["embeds"] = {}
         }
     }
+
     local webhookFunctions = {}
     local EmbedIndex = 0
-    function webhookFunctions.addEmbed(title: string, color: number, description: string)
+
+    function webhookFunctions.addEmbed(title, color, description)
         assert(title, "title required")
-        assert(description, "description required")
         assert(color, "color required")
+        assert(description, "description required")
 
         EmbedIndex += 1
-        local privateIndex = EmbedIndex
+        local embedIndex = EmbedIndex
 
-        table.insert(requestTable.Body.embeds, {
+        requestTable.Body.embeds[embedIndex] = {
             ["title"] = title,
             ["color"] = tonumber(color),
             ["description"] = description,
-            ["fields"] = {}
-        })
+            ["fields"] = {},
+            ["thumbnail"] = {
+                ["url"] = "https://cdn.discordapp.com/attachments/1231903084960157799/1364530802225975306/1743821690384.jpg?ex=680a01d7&is=6808b057&hm=ebd425fa65beb632555518e61088c0958b6e6c461fede5cb3654a6938136bfba"
+            }
+        }
+
         local embedFunctions = {}
+
         function embedFunctions.addField(name, value)
             assert(name, "name required")
             assert(value, "value required")
-            table.insert(requestTable.Body.embeds[privateIndex].fields, {
+            table.insert(requestTable.Body.embeds[embedIndex].fields, {
                 ["name"] = name,
                 ["value"] = value
             })
         end
+
         return embedFunctions
     end
+
     function webhookFunctions.sendMessage()
         requestTable.Body = HttpService:JSONEncode(requestTable.Body)
-        local response = request(requestTable)
-        return response
+        return request(requestTable)
     end
+
     return webhookFunctions
 end
+
 return webhookLibrary
