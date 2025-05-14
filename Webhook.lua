@@ -36,6 +36,7 @@ function webhookLibrary.createMessage(properties)
 
         EmbedIndex += 1
         local embedIndex = EmbedIndex
+        local huhu = os.date("%d/%m/%Y %H:%M")
 
         requestTable.Body.embeds[embedIndex] = {
             ["title"] = title,
@@ -44,6 +45,9 @@ function webhookLibrary.createMessage(properties)
             ["fields"] = {},
             ["thumbnail"] = {
                 ["url"] = "https://cdn.discordapp.com/attachments/1231903084960157799/1364530802225975306/1743821690384.jpg?ex=680a01d7&is=6808b057&hm=ebd425fa65beb632555518e61088c0958b6e6c461fede5cb3654a6938136bfba"
+            },
+            ["footer"] = {
+                ["text"] = "https://discord.gg/elgatohub - (" .. huhu .. ")"
             }
         }
 
