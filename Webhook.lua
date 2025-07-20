@@ -47,7 +47,7 @@ function webhookLibrary.createMessage(properties)
                 ["url"] = "https://cdn.discordapp.com/attachments/1374106941667807333/1396504088706945115/FB_IMG_1752161332671.jpg"
             },
             ["footer"] = {
-                ["text"] = "https://discord.gg/bUxz4epxaN - " .. timestamp
+                ["text"] = "Type Hub - " .. timestamp
             }
         }
 
