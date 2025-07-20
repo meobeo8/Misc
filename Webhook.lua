@@ -36,7 +36,7 @@ function webhookLibrary.createMessage(properties)
 
         EmbedIndex += 1
         local embedIndex = EmbedIndex
-        local timestamp = "<t:" .. os.time() .. ":R>" 
+        local timestamp = os.date("%d/%m/%Y %H:%M")
 
         requestTable.Body.embeds[embedIndex] = {
             ["title"] = title,
