@@ -36,7 +36,7 @@ function webhookLibrary.createMessage(properties)
 
         EmbedIndex += 1
         local embedIndex = EmbedIndex
-        local huhu = "<t:" .. os.time() .. ":R>"
+        local timestamp = "<t:" .. os.time() .. ":R>" 
 
         requestTable.Body.embeds[embedIndex] = {
             ["title"] = title,
@@ -44,10 +44,10 @@ function webhookLibrary.createMessage(properties)
             ["description"] = description,
             ["fields"] = {},
             ["thumbnail"] = {
-                ["url"] = "https://cdn.discordapp.com/attachments/1374106941667807333/1396504088706945115/FB_IMG_1752161332671.jpg?ex=687e5348&is=687d01c8&hm=e4cb9539d465207b66911ddd4bc3cda9a2f3a1f44d5417be7444af3f7df1ec49&"
+                ["url"] = "https://cdn.discordapp.com/attachments/1374106941667807333/1396504088706945115/FB_IMG_1752161332671.jpg"
             },
             ["footer"] = {
-                ["text"] = "https://discord.gg/bUxz4epxaN - .. huhu
+                ["text"] = "https://discord.gg/bUxz4epxaN - " .. timestamp
             }
         }
 
