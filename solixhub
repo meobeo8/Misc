@@ -4626,7 +4626,7 @@ local Library do
                 BorderColor3 = FromRGB(0, 0, 0),
                 AnchorPoint = Vector2New(0.5, 0),
                 Position = UDim2New(0.5, 0, 0, 15),
-                Size = UDim2New(0, 100, 0, 35),
+                Size = UDim2New(0, 100, 0, 50),
                 BorderSizePixel = 0,
                 AutomaticSize = Enum.AutomaticSize.XY,
                 BackgroundColor3 = FromRGB(16, 18, 21)
@@ -4694,7 +4694,7 @@ local Library do
                 Framecount = 0
             end
 
-            Items["Text"].Instance.Text = string.format("%s\n[%s FPS | %s ms]", Name, tostring(FramesPerSecond), tostring(MathFloor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())))
+            Items["Text"].Instance.Text = string.format("%s\n[%s FPS | PING %s ms]", Name, tostring(FramesPerSecond), tostring(MathFloor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())))
         end)
 
         return Watermark
