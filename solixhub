@@ -4694,7 +4694,7 @@ local Library do
                 Framecount = 0
             end
 
-            Items["Text"].Instance.Text = Name .. "\nFPS: "..tostring(FramesPerSecond).." ms: "..tostring(MathFloor(Stats.Network.ServerStatsItem['Data Ping']:GetValue()))
+            Items["Text"].Instance.Text = string.format("%s\n[%s FPS | %s ms]", Name, tostring(FramesPerSecond), tostring(MathFloor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())))
         end)
 
         return Watermark
