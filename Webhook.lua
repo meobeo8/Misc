@@ -1,5 +1,5 @@
 --[[
-Made by griffin
+Made by griffin (remake by ChatGPT)
 Discord: @griffindoescooking
 Github: https://github.com/idonthaveoneatm
 ]]--
@@ -36,9 +36,8 @@ function webhookLibrary.createMessage(properties)
 
         EmbedIndex += 1
         local embedIndex = EmbedIndex
-        local hour = tonumber(os.date("%H"))
-        local ampm = hour < 12 and "SA" or "CH"
-        local timestamp = os.date("%d/%m/%Y %I:%M ") .. ampm
+
+        local timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
 
         requestTable.Body.embeds[embedIndex] = {
             ["title"] = title,
@@ -49,8 +48,9 @@ function webhookLibrary.createMessage(properties)
                 ["url"] = "https://cdn.discordapp.com/attachments/1374106941667807333/1396504088706945115/FB_IMG_1752161332671.jpg"
             },
             ["footer"] = {
-                ["text"] = "discord.gg/solixhub • " .. timestamp
-            }
+                ["text"] = "discord.gg/solixhub"
+            },
+            ["timestamp"] = timestamp
         }
 
         local embedFunctions = {}
