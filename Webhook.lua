@@ -45,7 +45,7 @@ function webhookLibrary.createMessage(properties)
             ["description"] = description,
             ["fields"] = {},
             ["thumbnail"] = {
-                ["url"] = "https://cdn.discordapp.com/attachments/1374106941667807333/1396504088706945115/FB_IMG_1752161332671.jpg"
+                ["url"] = "https://cdn.discordapp.com/attachments/1366160415444439160/1450846645045694474/solix_logo-min_1.png?ex=694405bb&is=6942b43b&hm=084bc5cd54d82d66ac7f79fdd90c412df5071e69d1c70b9a896f707ac44c8606"
             },
             ["footer"] = {
                 ["text"] = "discord.gg/solixhub"
